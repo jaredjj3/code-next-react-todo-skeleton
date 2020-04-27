@@ -31,7 +31,7 @@ class App extends React.Component {
 
   onTodoInputEnter(todoInputValue) {
     // Copy the this.state.todos array.
-    const nextTodos = this.state.todos.slice();
+    const nextTodos = [...this.state.todos];
 
     // TODO(#2) Create a todo object, which has 3 properties:
     // id (number), text (string), and isComplete (boolean).
