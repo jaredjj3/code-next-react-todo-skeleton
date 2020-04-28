@@ -75,7 +75,7 @@ class App extends React.Component {
     // hint: see onTodoInputEnter
     this.setState({
       ...this.state,
-      nextTodos
+      todos: nextTodos
     });
   }
 
@@ -89,7 +89,7 @@ class App extends React.Component {
     // TODO(#20) Update the state to trigger a reload.
     this.setState({
       ...this.state,
-      nextTodos
+      todos: nextTodos
     });
   }
 
