@@ -97,7 +97,7 @@ class App extends React.Component {
         <TodoList
           todos={this.state.todos}
           onTodoListItemToggle={this.onTodoListItemToggle/* TODO(#17) Use this.onTodoListItemToggle */}
-          onTodoListItemRemove={this.onTodoListItemRemove/* TODO(#23) Use this.onTodoListItemRemove */}
+          onTodoListItemRemove={this.onTodoListItemRemove/* TODO(#23) Use the correct event handler. */}
         />
 
         <br />

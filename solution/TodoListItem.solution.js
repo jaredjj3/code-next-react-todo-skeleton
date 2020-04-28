@@ -43,7 +43,7 @@ export default class TodoListItem extends React.Component {
         </div>
         <button
           className="btn btn-danger btn-sm"
-          onClick={this.onRemoveClick/* TODO(#25) Use the this.onRemoveClick */}
+          onClick={this.onRemoveClick/* TODO(#25) Use the correct event handler */}
         >
           remove
         </button>
