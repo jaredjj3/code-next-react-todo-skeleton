@@ -34,8 +34,8 @@ export default class TodoListItem extends React.Component {
             id={id}
             className="form-check-input"
             type="checkbox"
-            checked={this.props.todo.isComplete/* TODO(#19) Use this.props.todo.isComplete */}
-            onChange={this.onCheckboxChange/* TODO(#18) Use this.onCheckboxChange */}
+            checked={this.props.todo.isComplete/* TODO(#18) Use the correct todo property. */}
+            onChange={this.onCheckboxChange/* TODO(#19) Use the correct event handler. */}
           />
           <label htmlFor={id} className="form-check-label">
             {this.props.todo.text}
