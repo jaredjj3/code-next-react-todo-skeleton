@@ -1,5 +1,5 @@
 import React from "react";
-import { deepCopy } from "lodash";
+import { cloneDeep } from "lodash";
 
 export default class TodoInput extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class TodoInput extends React.Component {
 
   onChange(event) {
     // Deep copy the state.
-    const nextState = deepCopy(this.state);
+    const nextState = cloneDeep(this.state);
 
     // TODO(#8) Set the nextState.value to be
     // the event.target.value.
@@ -46,7 +46,7 @@ export default class TodoInput extends React.Component {
 
   componentDidMount() {
     if (this.props.initialValue) {
-      const nextState = deepCopy(this.state);
+      const nextState = cloneDeep(this.state);
       nextState.value = this.props.initialValue;
       this.setState(nextState);
     }

@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
-import { deepCopy } from "lodash";
+import { cloneDeep } from "lodash";
 
 // TODO(#)s correspond to Code Next React Bootcamp's slides.
 
@@ -34,7 +34,7 @@ class App extends React.Component {
 
   onTodoInputEnter(todoInputValue) {
     // Deep copy the state.
-    const nextState = deepCopy(this.state);
+    const nextState = cloneDeep(this.state);
 
     // TODO(#5) Create a todo object, which has 3 properties:
     // id (number), text (string), and isComplete (boolean).
