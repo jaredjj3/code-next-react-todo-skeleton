@@ -16,6 +16,10 @@ export default class TodoInput extends React.Component {
     // TODO(#8) Update the state such that this.state.value
     // is set to the input's value. You can access the
     // input value by using event.target.value
+    this.setState({
+      ...this.state,
+      value: event.target.value
+    });
   }
 
   /**
@@ -29,10 +33,15 @@ export default class TodoInput extends React.Component {
     }
 
     // TODO(#9) Call this.props.onEnter with this.state.value.
+    this.props.onEnter(this.state.value);
     
     // TODO(#10) Update the state to set this.state.value
     // to an empty string so that the user doesn't have
     // to manually backspace.
+    this.setState({
+      ...this.state,
+      value: '',
+    });
   }
 
   componentDidMount() {
