@@ -9,12 +9,12 @@ export default class TodoListItem extends Component {
   }
 
   onCheckboxChange(event) {
-    // TODO(#13) Call this.props.onToggle with the todo ID.
+    // TODO(#16) Call this.props.onToggle with the todo ID.
     // hint: How can you access the todo ID?
   }
 
   onRemoveClick(event) {
-    // TODO(#19) Call this.props.onRemove with the todo ID.
+    // TODO(#22) Call this.props.onRemove with the todo ID.
     // hint: How can you access the todo ID?
   }
 
@@ -33,8 +33,8 @@ export default class TodoListItem extends Component {
             id={id}
             className="form-check-input"
             type="checkbox"
-            checked={/* TODO(#14) Use this.props.todo.isComplete */}
-            onChange={/* TODO(#15) Use this.onCheckboxChange */}
+            checked={/* TODO(#17) Use this.props.todo.isComplete */}
+            onChange={/* TODO(#18) Use this.onCheckboxChange */}
           />
           <label for={id} className="form-check-label">
             {this.props.todo.text}
@@ -42,7 +42,7 @@ export default class TodoListItem extends Component {
         </div>
         <button
           className="btn btn-danger btn-sm"
-          onClick={/* TODO(#20) Use the this.onRemoveClick event handler */}
+          onClick={/* TODO(#23) Use the this.onRemoveClick event handler */}
         >
           remove
         </button>

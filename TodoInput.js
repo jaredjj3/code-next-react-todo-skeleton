@@ -13,7 +13,7 @@ export default class TodoInput extends React.Component {
   }
 
   onChange(event) {
-    // TODO(#5) Update the state such that this.state.value
+    // TODO(#8) Update the state such that this.state.value
     // is set to the input's value. You can access the
     // input value by using event.target.value
   }
@@ -28,10 +28,10 @@ export default class TodoInput extends React.Component {
       return;
     }
 
-    // TODO(#6) Call this.props.onEnter with the 
+    // TODO(#9) Call this.props.onEnter with the 
     // state's value.
     
-    // TODO(#7) Update the state to set this.state.value
+    // TODO(#10) Update the state to set this.state.value
     // to an empty string so that the user doesn't have
     // to manually backspace.
   }

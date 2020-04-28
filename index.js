@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    // TODO(#1) Update the state such that reactDevName
+    // TODO(#3) Update the state such that reactDevName
     // points to a string of your name.
     this.state = {
       reactDevName: "???",
@@ -33,10 +33,10 @@ class App extends React.Component {
     // Copy the this.state.todos array.
     const nextTodos = [...this.state.todos];
 
-    // TODO(#2) Create a todo object, which has 3 properties:
+    // TODO(#5) Create a todo object, which has 3 properties:
     // id (number), text (string), and isComplete (boolean).
 
-    // TODO(#3) Add the todo to the nextTodos array.
+    // TODO(#6) Add the todo to the nextTodos array.
 
     // Update the state to trigger a reload.
     this.setState({
@@ -46,41 +46,41 @@ class App extends React.Component {
   }
 
   onTodoListItemToggle(id) {
-    // TODO(#8) Copy the this.state.todos array.
+    // TODO(#10) Copy the this.state.todos array.
     // hint: see onTodoInputEnter
 
-    // TODO(#9) Find the todo that matches the id.
+    // TODO(#11) Find the todo that matches the id.
     // If there is no matched todo, do nothing.
     // hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
 
-    // TODO(#10) Update the matched todo's isComplete property
+    // TODO(#13) Update the matched todo's isComplete property
     // to be the opposite of what it is currently set.
 
-    // TODO(#11) Update the state to trigger a reload.
+    // TODO(#14) Update the state to trigger a reload.
     // hint: see onTodoInputEnter
   }
 
   onTodoListItemRemove(id) {
-    // TODO(#16) Use Array.prototype.filter to create a new
+    // TODO(#19) Use Array.prototype.filter to create a new
     // this.state.todos array that does *not* have a todo
     // that matches given id.
     // hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
-    // TODO(#17) Update the state to trigger a reload.
+    // TODO(#20) Update the state to trigger a reload.
   }
 
   render() {
     return (
       <div className="container">
         <h1>{this.state.reactDevName}'s Todos</h1>
-        <TodoInput onEnter={/* TODO(#4) Use this.onTodoInputEnter */} />
+        <TodoInput onEnter={/* TODO(#7) Use this.onTodoInputEnter */} />
 
         <br />
 
         <TodoList
           todos={this.state.todos}
-          onTodoListItemToggle={/* TODO(#12) Use this.onTodoListItemToggle */}
-          onTodoListItemRemove={/* TODO(#18) Use this.onTodoListItemRemove */}
+          onTodoListItemToggle={/* TODO(#15) Use this.onTodoListItemToggle */}
+          onTodoListItemRemove={/* TODO(#21) Use this.onTodoListItemRemove */}
         />
 
         <br />
