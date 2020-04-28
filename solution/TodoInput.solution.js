@@ -41,7 +41,7 @@ export default class TodoInput extends React.Component {
     // TODO(#10) Deep copy the state.
     const nextState = cloneDeep(this.state);
 
-    // TODO(#11) Update the state to set such that the user
+    // TODO(#11) Update the state such that the user
     // does not have to manually backspace.
     nextState.value = '';
 
