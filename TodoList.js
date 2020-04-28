@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import TodoListItem from "./TodoListItem";
 
-export default class TodoList extends Component {
+export default class TodoList extends React.Component {
   render() {
     return (
       <ul className="list-group list-group-flush">

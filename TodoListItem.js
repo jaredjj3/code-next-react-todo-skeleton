@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class TodoListItem extends Component {
+export default class TodoListItem extends React.Component {
   constructor(props) {
     super(props);
 
@@ -36,7 +36,7 @@ export default class TodoListItem extends Component {
             checked={/* TODO(#17) Use this.props.todo.isComplete */}
             onChange={/* TODO(#18) Use this.onCheckboxChange */}
           />
-          <label for={id} className="form-check-label">
+          <label htmlFor={id} className="form-check-label">
             {this.props.todo.text}
           </label>
         </div>

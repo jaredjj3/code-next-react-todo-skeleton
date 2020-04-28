@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class TodoListItem extends Component {
+export default class TodoListItem extends React.Component {
   constructor(props) {
     super(props);
 
