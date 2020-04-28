@@ -3,6 +3,8 @@ import { render } from "react-dom";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
 
+// TODO(#)s correspond to Code Next React Bootcamp's slides.
+
 class App extends React.Component {
   constructor(props) {
     super(props);
