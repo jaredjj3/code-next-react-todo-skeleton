@@ -29,7 +29,7 @@ export default class TodoListItem extends React.Component {
 
     return (
       <li className={className}>
-        <div class="form-check form-check-inline">
+        <div className="form-check form-check-inline">
           <input
             id={id}
             className="form-check-input"
