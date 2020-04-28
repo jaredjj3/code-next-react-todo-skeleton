@@ -73,16 +73,16 @@ class App extends React.Component {
   }
 
   onTodoListItemRemove(id) {
-    // TODO(#20) Deep copy the state.
+    // TODO(#21) Deep copy the state.
     const nextState = cloneDeep(this.state);
 
-    // TODO(#21) Use Array.prototype.filter to create a new
+    // TODO(#22) Use Array.prototype.filter to create a new
     // this.state.todos array that does *not* have a todo
     // that matches given id.
     // hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
     nextState.todos = nextState.todos.filter(todo => todo.id !== id);
 
-    // TODO(#22) Set the next state.
+    // TODO(#23) Set the next state.
     this.setState(nextState);
   }
 
@@ -97,7 +97,7 @@ class App extends React.Component {
         <TodoList
           todos={this.state.todos}
           onTodoListItemToggle={this.onTodoListItemToggle/* TODO(#17) Use this.onTodoListItemToggle */}
-          onTodoListItemRemove={this.onTodoListItemRemove/* TODO(#23) Use the correct event handler. */}
+          onTodoListItemRemove={this.onTodoListItemRemove/* TODO(#24) Use the correct event handler. */}
         />
 
         <br />

@@ -15,7 +15,7 @@ export default class TodoListItem extends React.Component {
   }
 
   onRemoveClick(event) {
-    // TODO(#24) Call this.props.onRemove with the todo ID.
+    // TODO(#25) Call this.props.onRemove with the todo ID.
     this.props.onRemove(this.props.todo.id);
   }
 
@@ -34,8 +34,8 @@ export default class TodoListItem extends React.Component {
             id={id}
             className="form-check-input"
             type="checkbox"
-            checked={this.props.todo.isComplete/* TODO(#18) Use the correct todo property. */}
-            onChange={this.onCheckboxChange/* TODO(#19) Use the correct event handler. */}
+            checked={this.props.todo.isComplete/* TODO(#19) Use the correct todo property. */}
+            onChange={this.onCheckboxChange/* TODO(#20) Use the correct event handler. */}
           />
           <label htmlFor={id} className="form-check-label">
             {this.props.todo.text}
@@ -43,7 +43,7 @@ export default class TodoListItem extends React.Component {
         </div>
         <button
           className="btn btn-danger btn-sm"
-          onClick={this.onRemoveClick/* TODO(#25) Use the correct event handler */}
+          onClick={this.onRemoveClick/* TODO(#26) Use the correct event handler */}
         >
           remove
         </button>
