@@ -2,6 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
+import { deepCopy } from "lodash";
 
 // TODO(#)s correspond to Code Next React Bootcamp's slides.
 
@@ -12,7 +13,7 @@ class App extends React.Component {
     // TODO(#3) Update the state such that reactDevName
     // points to a string of your name.
     this.state = {
-      reactDevName: "Solution",
+      reactDevName: "Jared",
       todos: []
     };
 
@@ -32,79 +33,71 @@ class App extends React.Component {
   }
 
   onTodoInputEnter(todoInputValue) {
-    // Copy the this.state.todos array.
-    const nextTodos = [...this.state.todos];
+    // Deep copy the state.
+    const nextState = deepCopy(this.state);
 
     // TODO(#5) Create a todo object, which has 3 properties:
     // id (number), text (string), and isComplete (boolean).
+    // hint: Use this.nextId and change it in some way.
     const todo = {
       id: this.nextId++,
       text: todoInputValue,
-      isComplete: false,
+      isComplete: false
     };
 
-    // TODO(#6) Add the todo to the nextTodos array.
-    nextTodos.push(todo);
+    // TODO(#6) Add the todo to the nextState.todos array.
+    nextState.todos.push(todo);
 
-    // Update the state to trigger a reload.
-    this.setState({
-      ...this.state,
-      todos: nextTodos
-    });
+    // Set the next state.
+    this.setState(nextState);
   }
 
   onTodoListItemToggle(id) {
-    // TODO(#10) Copy the this.state.todos array.
-    // hint: see onTodoInputEnter
-    const nextTodos = [...this.state.todos];
+    // TODO(#13) Deep copy the state.
+    const nextState = deepCopy(this.state);
 
-    // TODO(#11) Find the todo that matches the id.
+    // TODO(#14) Find the todo that matches the id.
     // If there is no matched todo, do nothing.
     // hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
-    const todo = nextTodos.find(todo => todo.id === id);
+    const todo = nextState.todos.find(todo => todo.id === id);
     if (!todo) {
-      return
+      return;
     }
 
-
-    // TODO(#13) Update the matched todo's isComplete property
+    // TODO(#15) Update the matched todo's isComplete property
     // to be the opposite of what it is currently set.
     todo.isComplete = !todo.isComplete;
 
-    // TODO(#14) Update the state to trigger a reload.
-    // hint: see onTodoInputEnter
-    this.setState({
-      ...this.state,
-      todos: nextTodos
-    });
+    // TODO(#16) Set the next state.
+    this.setState(nextState);
   }
 
   onTodoListItemRemove(id) {
-    // TODO(#19) Use Array.prototype.filter to create a new
+    // TODO(#20) Deep copy the state.
+    const nextState = deepCopy(this.state);
+
+    // TODO(#21) Use Array.prototype.filter to create a new
     // this.state.todos array that does *not* have a todo
     // that matches given id.
     // hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-    const nextTodos = this.state.todos.filter(todo => todo.id !== id);
+    nextState.todos = nextState.todos.filter(todo => todo.id !== id);
 
-    // TODO(#20) Update the state to trigger a reload.
-    this.setState({
-      ...this.state,
-      todos: nextTodos
-    });
+    // TODO(#22) Set the next state.
+    this.setState(nextState);
   }
 
   render() {
     return (
       <div className="container">
         <h1>{this.state.reactDevName}'s Todos</h1>
-        <TodoInput onEnter={this.onTodoInputEnter} />
+        <TodoInput onEnter={this.onTodoInputEnter/* TODO(#7) Use this.onTodoInputEnter */} />
 
         <br />
 
         <TodoList
           todos={this.state.todos}
-          onTodoListItemToggle={this.onTodoListItemToggle/* TODO(#15) Use this.onTodoListItemToggle */}
-          onTodoListItemRemove={this.onTodoListItemRemove/* TODO(#21) Use this.onTodoListItemRemove */}
+          onTodoListItemToggle={this.onTodoListItemToggle/* TODO(#17) Use this.onTodoListItemToggle */}
+          onTodoListItemRemove={this.onTodoListItemRemove/* TODO(#23) Use this.onTodoListItemRemove */}
         />
 
         <br />

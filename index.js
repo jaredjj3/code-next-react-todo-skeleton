@@ -2,6 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
+import { deepCopy } from "lodash";
 
 // TODO(#)s correspond to Code Next React Bootcamp's slides.
 
@@ -32,43 +33,41 @@ class App extends React.Component {
   }
 
   onTodoInputEnter(todoInputValue) {
-    // Copy the this.state.todos array.
-    const nextTodos = [...this.state.todos];
+    // Deep copy the state.
+    const nextState = deepCopy(this.state);
 
     // TODO(#5) Create a todo object, which has 3 properties:
     // id (number), text (string), and isComplete (boolean).
+    // hint: Use this.nextId and change it in some way.
 
-    // TODO(#6) Add the todo to the nextTodos array.
+    // TODO(#6) Add the todo to the nextState.todos array.
 
-    // Update the state to trigger a reload.
-    this.setState({
-      ...this.state,
-      todos: nextTodos
-    });
+    // Set the next state.
+    this.setState(nextState);
   }
 
   onTodoListItemToggle(id) {
-    // TODO(#10) Copy the this.state.todos array.
-    // hint: see onTodoInputEnter
+    // TODO(#13) Deep copy the state.
 
-    // TODO(#11) Find the todo that matches the id.
+    // TODO(#14) Find the todo that matches the id.
     // If there is no matched todo, do nothing.
     // hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
 
-    // TODO(#13) Update the matched todo's isComplete property
+    // TODO(#15) Update the matched todo's isComplete property
     // to be the opposite of what it is currently set.
 
-    // TODO(#14) Update the state to trigger a reload.
-    // hint: see onTodoInputEnter
+    // TODO(#16) Set the next state.
   }
 
   onTodoListItemRemove(id) {
-    // TODO(#19) Use Array.prototype.filter to create a new
+    // TODO(#20) Deep copy the state.
+
+    // TODO(#21) Use Array.prototype.filter to create a new
     // this.state.todos array that does *not* have a todo
     // that matches given id.
     // hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
-    // TODO(#20) Update the state to trigger a reload.
+    // TODO(#22) Set the next state.
   }
 
   render() {
@@ -81,8 +80,8 @@ class App extends React.Component {
 
         <TodoList
           todos={this.state.todos}
-          onTodoListItemToggle={/* TODO(#15) Use this.onTodoListItemToggle */}
-          onTodoListItemRemove={/* TODO(#21) Use this.onTodoListItemRemove */}
+          onTodoListItemToggle={/* TODO(#17) Use this.onTodoListItemToggle */}
+          onTodoListItemRemove={/* TODO(#23) Use this.onTodoListItemRemove */}
         />
 
         <br />

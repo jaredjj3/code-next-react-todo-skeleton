@@ -1,4 +1,5 @@
 import React from "react";
+import { deepCopy } from "lodash";
 
 export default class TodoInput extends React.Component {
   constructor(props) {
@@ -13,13 +14,15 @@ export default class TodoInput extends React.Component {
   }
 
   onChange(event) {
-    // TODO(#8) Update the state such that this.state.value
-    // is set to the input's value. You can access the
-    // input value by using event.target.value
-    this.setState({
-      ...this.state,
-      value: event.target.value
-    });
+    // Deep copy the state.
+    const nextState = deepCopy(this.state);
+
+    // TODO(#8) Set the nextState.value to be
+    // the event.target.value.
+    nextState.value = event.target.value;
+
+    // Set the next state.
+    this.setState(nextState);
   }
 
   /**
@@ -35,21 +38,22 @@ export default class TodoInput extends React.Component {
     // TODO(#9) Call this.props.onEnter with this.state.value.
     this.props.onEnter(this.state.value);
     
-    // TODO(#10) Update the state to set this.state.value
-    // to an empty string so that the user doesn't have
-    // to manually backspace.
-    this.setState({
-      ...this.state,
-      value: '',
-    });
+    // TODO(#10) Deep copy the state.
+    const nextState = deepCopy(this.state);
+
+    // TODO(#11) Update the state to set such that the user
+    // does not have to manually backspace.
+    nextState.value = '';
+
+    // TODO(#12) Set the next state.
+    this.setState(nextState);
   }
 
   componentDidMount() {
     if (this.props.initialValue) {
-      this.setState({
-        ...this.state,
-        value: this.props.initialValue
-      });
+      const nextState = deepCopy(this.state);
+      nextState.value = this.props.initialValue;
+      this.setState(nextState);
     }
   }
 
